@@ -1,17 +1,17 @@
 #user enters a nucleotide sequence
 seq=(input("Enter a DNA sequence: "))
 
-#nucleotide sequence will be converted as list 
+#nucleotide sequence will be converted as list of individual bases
 dna=list(seq)
 print("DNA sequence: ",dna)
 
-#converts the 'T' in the sequence to 'U'
+#converts the base 'T' in the sequence to 'U'
 for i in range(len(dna)):
     if dna[i]=='T':
         dna[i]='U'
 print("RNA sequence: ",dna)
 
-#joins individual nucleotides together
+#joins individual bases together as a sequence
 dna=''.join(dna)
 
 #dna sequence is converted as rna sequence
@@ -36,7 +36,7 @@ codon={'AUA':'I', 'AUC':'I', 'AUU':'I', 'AUG':'M',
         'UAC':'Y', 'UAU':'Y', 'UAA':'_', 'UAG':'_',
         'UGC':'C', 'UGU':'C', 'UGA':'_', 'UGG':'W',}
 
-#splices three nucleotides from the rna sequence and returns the codon value 
+#splices three bases at a time from the rna sequence and returns the codon value 
 for a in range(0,len(rna),3):
     n=rna[a:a+3]
     print(codon[n],end='')
